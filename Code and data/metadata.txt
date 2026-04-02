@@ -1,0 +1,110 @@
+a) Title of the dataset
+Dataset for the paper "Estimation of the second-order coherence function using quantum reservoir and ensemble methods"
+- case1_random_forest.mat
+- case2_2nodes.mat
+- case2_different_odd_m.mat
+- case2_g2_density_data.mat
+- case3_D2_all_1000.mat
+- case3_extended_1000.mat
+- case3_extended_8000.mat
+- case3_multiplexing.mat
+- case4_quantum.mat
+
+
+b) Author(s) and their affiliations
+Dogyun Ko : Institute of Physics, Polish Academy of Sciences, Warsaw, Poland.
+
+Stanisław Świerczewski : Institute of Physics, Polish Academy of Sciences, Warsaw, Poland.
+
+Andrzej Opala : Institute of Physics, Polish Academy of Sciences and Institute of Experimental Physics, Faculty of Physics, University of Warsaw, Poland.
+
+Michał Matuszewski : Institute of Physics, Polish Academy of Sciences and Center for Theoretical Physics, Polish Academy of Sciences, Warsaw, Poland.
+
+Amir Rahmani : Institute of Physics, Polish Academy of Sciences, Warsaw, Poland.
+
+
+c) Date of data creation and/or collection
+The research data was generated and collected in August, 2025.
+
+
+d) Description of research methodology and tools used to obtain the data
+A hybrid quantum-classical approach is employed to estimate the zero-time second-order correlation function. Input quantum states are processed through a Quantum Reservoir Computing framework, which maps these states into a higher-dimensional Hilbert space to extract complex features. The reservoir dynamics are obtained by solving the Lindblad master equation. This accounts for the evolution of the density matrix for the entire system. The final prediction is performed using a ensemble decision-tree model. Specifically, the ExtraTreesRegressor and RandomForestRegressor algorithms from the scikit-learn library are used to provide accurate prediction. The approach is evaluated by comparing results obtained with the quantum reservoir and a no-reservoir only using direct intensity measurements. Accuracy is quantified using the normalized mean-square error.
+
+
+e) Data format and structure
+- case1_random_forest.mat
+   -n1_selcted : reservoir density for node 1 [32X32 cell]
+   -n2_selcted : reservoir density for node 2 [32X32 cell]
+   -ns : source Intensity [32X32 double]
+   -phi : [1X32 double]
+   -theta : [1X32 double]
+   -g2 : [32X32 double]
+
+- case2_2nodes.mat
+   -n1_selcted : reservoir density for node 1 [1X1000 cell]
+   -n2_selcted : reservoir density for node 2 [1X1000 cell]
+   -n3_selcted : reservoir density for node 3 [1X1000 cell]
+   -r [1X1000 double]
+   -g2 [1X1000 double]
+ 	
+- case2_different_odd_m.mat
+   -nm_all : source intensity with m=1, 3, 5  [3X1000 double]
+   -g2_all : g2 with m=1, 3, 5 [3X1000 double]
+	
+- case2_g2_density_data.mat
+   -n_m : [1X1000 double]
+   -g2_m : [1X1000 double]
+
+- case3_D2_all_1000.mat
+   -g2_a_D2_1_1000 : g2 with Delta_b = 1\gamma_a [1000X1 double] 
+   -g2_a_D2_14_1000 : g2 with Delta_b = 1.4\gamma_a [1000X1 double] 
+   -g2_a_D2_16_1000 : g2 with Delta_b = 1.6\gamma_a [1000X1 double] 
+   -g2_a_D2_18_1000 : g2 with Delta_b = 1.8\gamma_a [1000X1 double]
+   -ns_D2_1_1000 : reservoir density with Delta_b = 1\gamma_a [1X1000 cell] 
+   -ns_D2_14_1000 : reservoir density with Delta_b = 1.4\gamma_a [1X1000 cell] 
+   -ns_D2_16_1000 : reservoir density with Delta_b = 1.6\gamma_a [1X1000 cell] 
+   -ns_D2_18_1000 : reservoir density with Delta_b = 1.8\gamma_a [1X1000 cell]
+   -n_a_D2_1_1000 : source density with Delta_b = 1\gamma_a [1X1000 cell] 
+   -n_a_D2_14_1000 : source density with Delta_b = 1.4\gamma_a [1X1000 cell] 
+   -n_a_D2_16_1000 : source density with Delta_b = 1.6\gamma_a [1X1000 cell] 
+   -n_a_D2_18_1000 : source density with Delta_b = 1.8\gamma_a [1X1000 cell] 	
+   -Delta1_vector : [1X1000 double] 
+   
+- case3_extended_1000.mat
+   -Delta1_vector : [1X1000 double]
+   -g2_a : [1X1000 double]
+   -n_a : source density [1000X1 double]
+   -ns : reservoir density [1X1000 cell]
+
+- case3_extended_8000.mat
+   -Delta1_vector : [1X8000 double]
+   -g2_a : [1X8000 double]
+   -n_a : source density [8000X1 double]
+   -ns : reservoir density [1X8000 cell]		
+
+- case3_multiplexing.mat
+   -n1 : reservoir density [1X100 double]
+   -n1_selected : selected reservoir density for multiplexing [1X20 double]
+   -selected_points : selected time for multiplexing [1X20 double]
+   -T : time [1X100 double] 
+
+- case4_quantum.mat
+   -all_ns : reservoir density [1000X40 double]
+   -pop_O2_4saving : source density [1000X1 double]   
+   -g2 : [1000X1 double]
+   -Delta_a_vector : [1000X1 double]
+	
+
+
+f) Data sharing and licensing conditions
+The data is open for everyone and is hosted in the following GitHub repository: https://github.com/kdg930202/quantum_reservoir_computing/tree/main/Code%20and%20data
+
+
+
+g) a note about project funding and the correct project registration number
+National Science Center, Poland
+2021/43/B/ST3/00752
+2020/37/B/ST3/01657
+2024/52/C/ST3/00324
+
+
